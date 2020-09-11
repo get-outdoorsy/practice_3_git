@@ -35,7 +35,7 @@
 		</div>
 		
 		<input type="submit" class="btn btn-primary float-right" value="Sign Up"></input>
-		
+		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>
 </body>
