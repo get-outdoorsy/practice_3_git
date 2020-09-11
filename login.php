@@ -23,7 +23,7 @@
 		</div>
 		
 		<input type="submit" name="btnLogin" class="btn btn-primary float-right" value="Login"></input>
-		<a href="signup.php">Don't have an account yet?</a>
+		<a href="signup.php">No account yet?</a>
 		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>
