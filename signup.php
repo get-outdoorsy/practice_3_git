@@ -30,11 +30,15 @@
 			autocomplete="off" required>
 		</div>
 		<div class="form-group">
+			<input type="text" class="form-control" name="pupil_email" placeholder="Enter email" 
+			autocomplete="off" required>
+		</div>
+		<div class="form-group">
 			<input type="password" class="form-control" name="pupil_password" placeholder="Enter password" 
 			autocomplete="off" required>
 		</div>
 		
-		<input type="submit" class="btn btn-primary float-right" value="Sign Up"></input>
+		<input type="submit" name="btnSignup" class="btn btn-primary float-right" value="Sign Up"></input>
 		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>
