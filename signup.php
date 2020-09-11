@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container" style="width: 50%; margin-top: 5%;">
-	<form action="#" method="post" class="was-validated">
+	<form action="process.php" method="post" class="was-validated">
 		<div class="form-group">
 			<input type="text" class="form-control" name="pupil_firstName" placeholder="Enter first name"
 			autocomplete="off" required>
@@ -39,6 +39,7 @@
 		</div>
 		
 		<input type="submit" name="btnSignup" class="btn btn-primary float-right" value="Sign Up"></input>
+		<a href="login.php">Already have an accout?</a>
 		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>

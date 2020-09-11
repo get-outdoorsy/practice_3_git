@@ -11,6 +11,9 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+	<?php 
+	include('process.php') 
+	?>
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   	<!-- Brand/logo -->
 	  <a class="navbar-brand" href="#">
@@ -26,7 +29,7 @@
 	      <a class="nav-link" href="#">Section</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#">Logout</a>
+	      <a class="nav-link" href="login.php">Logout</a>
 	    </li>
 	  </ul>
 	</nav>
