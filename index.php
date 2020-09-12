@@ -18,7 +18,8 @@
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   	<!-- Brand/logo -->
 	  <a class="navbar-brand" href="#">
-	    <img src="bird.jpg" alt="logo" style="width:40px;">
+	    <img src="images/prof_pic_2.png" class="d-inline" style="width:40px;">
+	    <p class="d-inline"><?php if(isset($_SESSION['user_pupil'])){ echo $_SESSION['user_pupil'];} ?></p>
 	  </a>
 	  
 	  <!-- Links -->
@@ -36,12 +37,7 @@
 	</nav>
 
 	<div class="container-fluid">
-	  <h3>
-	  	Welcome 
-	  	<?php 
-	  		if(isset($_SESSION['user_pupil'])){
-	  			echo $_SESSION['user_pupil']; 
-	  		} ?></h3>
+	  <h3>Landing Page</h3>
 	</div>
 </body>
 </html>

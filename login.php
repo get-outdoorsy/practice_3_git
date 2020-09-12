@@ -10,8 +10,9 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body background="images/bg_1.jpg">
 	<div class="container" style="width: 50%; margin-top: 5%;">
+	<h1 class="text-white">Pupil</h1>
 	<form action="process.php" method="post" class="was-validated">
 		<div class="form-group">
 			<input type="text" class="form-control" name="pupil_email" placeholder="Enter email" 
@@ -23,7 +24,7 @@
 		</div>
 		
 		<input type="submit" name="btnLogin" class="btn btn-primary float-right" value="Login"></input>
-		<a href="signup.php">No account yet?</a>
+		<a href="signup.php" class="text-white">No account yet?</a>
 		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>
