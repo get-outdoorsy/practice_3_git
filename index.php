@@ -1,3 +1,6 @@
+<?php 
+	include_once('process.php') 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +14,7 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<?php 
-	include('process.php') 
-	?>
+	
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   	<!-- Brand/logo -->
 	  <a class="navbar-brand" href="#">
@@ -29,13 +30,18 @@
 	      <a class="nav-link" href="#">Section</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="login.php">Logout</a>
+	      <a class="nav-link" href="logout.php">Logout</a>
 	    </li>
 	  </ul>
 	</nav>
 
 	<div class="container-fluid">
-	  <h3>Landing Page</h3>
+	  <h3>
+	  	Welcome 
+	  	<?php 
+	  		if(isset($_SESSION['user_pupil'])){
+	  			echo $_SESSION['user_pupil']; 
+	  		} ?></h3>
 	</div>
 </body>
 </html>
