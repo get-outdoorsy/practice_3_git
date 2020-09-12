@@ -1,5 +1,8 @@
 <?php 
-	include_once('process.php') 
+	include_once('process.php');
+	if(!isset($_SESSION['user_pupil'])){
+		header('location: login.php');
+	} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
