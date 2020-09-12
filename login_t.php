@@ -1,3 +1,10 @@
+<?php 
+	session_start();
+	if(isset($_SESSION['user_teacher'])){
+		header('location: index_t.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +17,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body background="images/bg_1.jpg">
+<body background="images/bg_2.jpg">
 	<nav class="navbar navbar-light">
 		<div class="row">	
 			<a class="nav-link text-white" href="login_t.php">Teacher</a>
@@ -18,19 +25,19 @@
   		</div>
 	</nav>
 	<div class="container" style="width: 50%; margin-top: 5%;">
-	<h1 class="text-white">Pupil</h1>
+	<h1 class="text-white">Teacher</h1>
 	<form action="process.php" method="post" class="was-validated">
 		<div class="form-group">
-			<input type="text" class="form-control" name="pupil_email" placeholder="Enter email" 
+			<input type="text" class="form-control" name="teacher_email" placeholder="Enter email" 
 			autocomplete="off" required>
 		</div>
 		<div class="form-group">
-			<input type="password" class="form-control" name="pupil_password" placeholder="Enter password" 
+			<input type="password" class="form-control" name="teacher_password" placeholder="Enter password" 
 			autocomplete="off" required>
 		</div>
 		
-		<input type="submit" name="btnLogin" class="btn btn-primary float-right" value="Login"></input>
-		<a href="signup.php" class="text-white">No account yet?</a>
+		<input type="submit" name="btnLogin_t" class="btn btn-primary float-right" value="Login"></input>
+		<a href="signup_t.php" class="text-white">No account yet?</a>
 		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>

@@ -37,7 +37,7 @@
 	</nav>
 
 	<div class="container-fluid">
-	  <h3>Landing Page</h3>
+	  <h3>Landing Page Pupil</h3>
 	</div>
 </body>
 </html>

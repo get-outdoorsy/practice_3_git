@@ -11,6 +11,12 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body background="images/bg_1.jpg">
+	<nav class="navbar navbar-light">
+		<div class="row">	
+			<a class="nav-link text-white" href="login_t.php">Teacher</a>
+  			<a class="nav-link text-white " href="login.php">Pupil</a>
+  		</div>
+	</nav>
 	<div class="container" style="width: 50%; margin-top: 5%;">
 	<h1 class="text-white">Pupil</h1>
 	<form action="process.php" method="post" class="was-validated">
