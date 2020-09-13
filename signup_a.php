@@ -1,7 +1,7 @@
 <?php 
 	session_start();
-	if(isset($_SESSION['user_pupil'])){
-		header('location: index.php');
+	if(isset($_SESSION['user_admin'])){
+		header('location: index_a.php');
 	}
 ?>
 <!DOCTYPE html>
@@ -16,28 +16,36 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="css/style.css">
 </head>
-<body background="images/bg_1.jpg">
+<body background="images/bg_4.jpeg">
 	<nav class="navbar navbar-light">
-		<div class="row">	
-			<a class="nav-link text-white" href="login_a.php">Admin</a>
+		<div class="row">
+			<a class="nav-link text-white" href="login_a.php">Admin</a>	
 			<a class="nav-link text-white" href="login_t.php">Teacher</a>
   			<a class="nav-link text-white " href="login.php">Pupil</a>
   		</div>
 	</nav>
 	<div class="container" style="width: 50%; margin-top: 5%;">
-	<h1 class="text-white">Pupil</h1>
+	<h1 class="text-white">Admin</h1>
 	<form action="process.php" method="post" class="was-validated">
 		<div class="form-group">
-			<input type="text" class="form-control" name="pupil_email" placeholder="Enter email" 
+			<input type="text" class="form-control" name="admin_firstName" placeholder="Enter first name"
 			autocomplete="off" required>
 		</div>
 		<div class="form-group">
-			<input type="password" class="form-control" name="pupil_password" placeholder="Enter password" 
+			<input type="text" class="form-control" name="admin_lastName" placeholder="Enter last name" 
+			autocomplete="off" required>
+		</div>
+		<div class="form-group">
+			<input type="text" class="form-control" name="admin_email" placeholder="Enter email" 
+			autocomplete="off" required>
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control" name="admin_password" placeholder="Enter password" 
 			autocomplete="off" required>
 		</div>
 		
-		<input type="submit" name="btnLogin" class="btn btn-primary float-right" value="Login"></input>
-		<a href="signup.php" class="text-white">No account yet?</a>
+		<input type="submit" name="btnSignup_a" class="btn btn-primary float-right" value="Sign Up"></input>
+		<a href="login.php" class="text-white">Already have an accout?</a>
 		<!-- GUMANA KA GITITITITI -->
 	</form>
 	</div>

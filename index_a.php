@@ -1,8 +1,8 @@
 <?php 
-	include_once('process.php'); 
-	if(!isset($_SESSION['user_teacher'])){
-		header('location: login_t.php');
-	}
+	include_once('process.php');
+	if(!isset($_SESSION['user_admin'])){
+		header('location: login_a.php');
+	} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,26 +21,29 @@
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   	<!-- Brand/logo -->
 	  <a class="navbar-brand" href="#">
-	    <img src="images/prof_pic_3.png" class="d-inline" style="width:40px;">
-	    <p class="d-inline"><?php if(isset($_SESSION['user_teacher'])){ echo $_SESSION['user_teacher'];} ?></p>
+	    <img src="images/prof_pic_4.png" class="d-inline" style="width:40px;">
+	    <p class="d-inline"><?php if(isset($_SESSION['user_admin'])){ echo $_SESSION['user_admin'];} ?></p>
 	  </a>
 	  
 	  <!-- Links -->
 	  <ul class="navbar-nav">
 	    <li class="nav-item">
-	      <a class="nav-link" href="index_t.php">Home</a>
+	      <a class="nav-link" href="index_a.php">Home</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#">Pupils</a>
+	      <a class="nav-link" href="#">Pupil</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="logout_t.php">Logout</a>
+	      <a class="nav-link" href="#">Teachers</a>
+	    </li>
+	    <li class="nav-item">
+	      <a class="nav-link" href="logout_a.php">Logout</a>
 	    </li>
 	  </ul>
 	</nav>
 
-	<div class="container-fluid">
-	  <h3>Landing Page Teacher</h3>
+	<div class="container">
+		<h3>Landing Page Admin</h3>
 	</div>
 </body>
 </html>

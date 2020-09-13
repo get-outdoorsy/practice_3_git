@@ -20,6 +20,7 @@
 <body background="images/bg_2.jpg">
 	<nav class="navbar navbar-light">
 		<div class="row">	
+			<a class="nav-link text-white" href="login_a.php">Admin</a>
 			<a class="nav-link text-white" href="login_t.php">Teacher</a>
   			<a class="nav-link text-white " href="login.php">Pupil</a>
   		</div>

@@ -28,10 +28,10 @@
 	  <!-- Links -->
 	  <ul class="navbar-nav">
 	    <li class="nav-item">
-	      <a class="nav-link" href="#">Home</a>
+	      <a class="nav-link" href="index.php">Home</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#">Section</a>
+	      <a class="nav-link" href="#">Class</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="logout.php">Logout</a>

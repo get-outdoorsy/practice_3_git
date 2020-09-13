@@ -2,6 +2,7 @@
 	session_start();	
 	require_once('config.php');
 
+	//pupil
 	if(isset($_POST['btnSignup'])){
 		$pupil_firstName = $_POST['pupil_firstName'];
 		$pupil_lastName = $_POST['pupil_lastName'];
@@ -42,6 +43,7 @@
 		
 	}
 
+	//teacher
 	if(isset($_POST['btnSignup_t'])){
 		$teacher_firstName = $_POST['teacher_firstName'];
 		$teacher_lastName = $_POST['teacher_lastName'];
@@ -74,6 +76,41 @@
 			header('location: index_t.php');
 		}else{
 			header('location: login_t.php');
+		}
+	}
+
+	//admin
+	if(isset($_POST['btnSignup_a'])){
+		$admin_firstName = $_POST['admin_firstName'];
+		$admin_lastName = $_POST['admin_lastName'];
+		$admin_email = $_POST['admin_email'];
+		$admin_password = $_POST['admin_password'];
+
+		$insertQuery = "INSERT INTO admin(admin_firstName, admin_lastName, admin_email, admin_password) VALUES('$admin_firstName', '$admin_lastName', '$admin_email', '$admin_password')";
+		$conn->query($insertQuery) or die("Error ".$conn->error);
+
+		$retrieveQuery = "SELECT * FROM admin WHERE admin_firstName = '$admin_firstName' ";
+		$result = $conn->query($retrieveQuery) or die("Error ".$conn->error);
+		$row = $result->fetch_array();
+		if($row['admin_firstName'] == $admin_firstName){
+			$_SESSION['user_admin'] = $row['admin_firstName'];
+		}
+
+		header("location: index_a.php");
+	}
+
+	if(isset($_POST['btnLogin_a'])){
+		$admin_email = $_POST['admin_email'];
+		$admin_password = $_POST['admin_password'];
+
+		$retrieveQuery = "SELECT * FROM admin WHERE admin_email = '$admin_email' AND admin_password =        '$admin_password'";
+		$result = $conn->query($retrieveQuery);
+		$row = $result->fetch_array();
+		if($row['admin_email'] == $admin_email && $row['admin_password'] == $admin_password){
+			$_SESSION['user_admin'] = $row['admin_firstName'];
+			header("location: index_a.php");
+		}else{
+			header("location: login_a.php");
 		}
 	}
 ?>

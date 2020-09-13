@@ -18,7 +18,8 @@
 </head>
 <body background="images/bg_1.jpg">
 	<nav class="navbar navbar-light">
-		<div class="row">	
+		<div class="row">
+			<a class="nav-link text-white" href="login_a.php">Admin</a>	
 			<a class="nav-link text-white" href="login_t.php">Teacher</a>
   			<a class="nav-link text-white " href="login.php">Pupil</a>
   		</div>
