@@ -113,4 +113,13 @@
 			header("location: login_a.php");
 		}
 	}
+
+	if(isset($_GET['delete_id_p'])){
+		$id = $_GET['delete_id_p'];
+		$deleteQuery = "DELETE FROM pupils WHERE pupil_id = '$id'";
+		$conn->query($deleteQuery) or die("Error ".$conn->error);
+		header("location: pupil.php");
+		$_SESSION['msg'] = "User deleted.";
+		$_SESSION['msg_type'] = "danger";
+	}
 ?>

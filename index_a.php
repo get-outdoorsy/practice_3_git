@@ -31,7 +31,7 @@
 	      <a class="nav-link" href="index_a.php">Home</a>
 	    </li>
 	    <li class="nav-item">
-	      <a class="nav-link" href="#">Pupil</a>
+	      <a class="nav-link" href="pupil.php">Pupil</a>
 	    </li>
 	    <li class="nav-item">
 	      <a class="nav-link" href="#">Teachers</a>
