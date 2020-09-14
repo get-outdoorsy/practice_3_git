@@ -42,34 +42,36 @@
 	  </ul>
 	</nav>
 
-	<?php if(isset($_SESSION['msg'])): ?>
-	<div class="bg-<?php echo $_SESSION['msg_type'];?>">
-		<h1 class="text-white"><?php echo $_SESSION['msg']; ?> <h1>
-
-	</div>
-	<?php unset($_SESSION['msg']); endif ?>
+	
 
 	<div class="container" style="width: 60%; margin-top: 30px;">
+		<?php if(isset($_SESSION['msg'])): ?>
+		<div class="bg-<?php echo $_SESSION['msg_type'];?>">
+			<h1 class="text-white" ><?php echo $_SESSION['msg']; ?> <h1>
+
+		</div>
+		<?php unset($_SESSION['msg']); endif ?>
 		<form action="process.php" method="post" class="was-validated">
+			<input type="hidden" name="update_id_p" value="<?php echo $id; ?>">
 		  <div class="form-group">
 		    <label for="email">First Name:</label>
-		    <input type="text" class="form-control" required>
+		    <input type="text" class="form-control" name = "pupil_firstName" value = "<?php               echo $pupil_firstName; ?>" autocomplete = "off" required>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd">Last Name:</label>
-		    <input type="text" class="form-control" required>
+		    <input type="text" class="form-control" name = "pupil_lastName" value = "<?php                 echo $pupil_lastName; ?>" autocomplete = "off" required>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd">Age:</label>
-		    <input type="text" class="form-control" required>
+		    <input type="text" class="form-control" name = "pupil_age" value = "<?php echo $pupil_age; ?>"    autocomplete = "off" required>
 		  </div>
 		  <div class="form-group">
 		    <label for="pwd">Contact:</label>
-		    <input type="text" class="form-control" required>
+		    <input type="text" class="form-control" name = "pupil_contact" value ="<?php echo $pupil_contact; ?>" autocomplete = "off" required>
 		  </div>
 		  
 		  <div class="form-group d-flex justify-content-end">
-		  	<button type="submit" class="btn btn-success" name="btnUpdate_p">Update</button>
+		  	<input type="submit" class="btn btn-success" name="btnUpdate_p" value="Update"></input>
 		  </div>
 		  
 		</form>
@@ -96,7 +98,7 @@
 				<td><?php echo $row['pupil_lastName']; ?></td>
 				<td><?php echo $row['pupil_contact']; ?></td>
 				<td>
-					<a href="#" class="btn btn-info">Edit</a>
+					<a href="pupil.php?edit_id_p=<?php echo $row['pupil_id']; ?>" class="btn btn-info">Edit</a>
 					<a href="process.php?delete_id_p=<?php echo $row['pupil_id']; ?>" class="btn btn-danger">Delete</a>
 				</td>
 			</tr>

@@ -2,6 +2,12 @@
 	session_start();	
 	require_once('config.php');
 
+	$id = 0;
+	$pupil_firstName = "";
+	$pupil_lastName = "";
+	$pupil_age = "";
+	$pupil_contact = "";
+
 	//pupil
 	if(isset($_POST['btnSignup'])){
 		$pupil_firstName = $_POST['pupil_firstName'];
@@ -121,5 +127,36 @@
 		header("location: pupil.php");
 		$_SESSION['msg'] = "User deleted.";
 		$_SESSION['msg_type'] = "danger";
+	}
+
+	if(isset($_GET['edit_id_p'])){
+		$id = $_GET['edit_id_p']; //pupil id
+		$getQuery = "SELECT * FROM pupils WHERE pupil_id = '$id'";
+		$result = $conn->query($getQuery) or die("Error ".$conn->error);
+		if(count($result) > 0){
+			$row = $result->fetch_assoc();
+			$pupil_firstName = $row['pupil_firstName'];
+			$pupil_lastName = $row['pupil_lastName'];
+			$pupil_age = $row['pupil_age'];
+			$pupil_contact = $row['pupil_contact'];
+		}
+	}
+
+	if(isset($_POST['btnUpdate_p'])){
+		$update_id_p = $_POST['update_id_p'];
+		$pupil_firstName = $_POST['pupil_firstName'];
+		$pupil_lastName = $_POST['pupil_lastName'];
+		$pupil_age = $_POST['pupil_age'];
+		$pupil_contact = $_POST['pupil_contact'];
+
+		$updateQuery = "UPDATE pupils SET pupil_firstName = '$pupil_firstName', pupil_lastName =             '$pupil_lastName', pupil_age = '$pupil_age', pupil_contact = '$pupil_contact' WHERE pupil_id = 
+			'$update_id_p'";
+		$conn->query($updateQuery) or die("Error sa update ".$conn->error);
+
+		$_SESSION['msg'] = "Update success";
+		$_SESSION['msg_type'] = "success";
+
+		header("location: pupil.php");
+
 	}
 ?>
