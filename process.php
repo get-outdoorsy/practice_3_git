@@ -8,6 +8,11 @@
 	$pupil_age = "";
 	$pupil_contact = "";
 
+	$teacher_firstName = "";
+	$teacher_lastName = "";
+	$teacher_age = "";
+	$teacher_contact = "";
+
 	//pupil
 	if(isset($_POST['btnSignup'])){
 		$pupil_firstName = $_POST['pupil_firstName'];
@@ -125,7 +130,7 @@
 		$deleteQuery = "DELETE FROM pupils WHERE pupil_id = '$id'";
 		$conn->query($deleteQuery) or die("Error ".$conn->error);
 		header("location: pupil.php");
-		$_SESSION['msg'] = "User deleted.";
+		$_SESSION['msg'] = "User deleted";
 		$_SESSION['msg_type'] = "danger";
 	}
 
@@ -157,6 +162,45 @@
 		$_SESSION['msg_type'] = "success";
 
 		header("location: pupil.php");
+
+	}
+
+	if(isset($_GET['delete_id_t'])){
+		$id = $_GET['delete_id_t'];
+		$deleteQuery = "DELETE FROM teacher WHERE teacher_id = '$id'";
+		$conn->query($deleteQuery) or die("Error ".$conn->error);
+		header("location: teacher.php");
+		$_SESSION['msg'] = "User deleted";
+		$_SESSION['msg_type'] = "danger";
+	}
+
+	if(isset($_GET['edit_id_t'])){
+		$id = $_GET['edit_id_t']; //teacher id
+		$getQuery = "SELECT * FROM teacher WHERE teacher_id = '$id'";
+		$result = $conn->query($getQuery) or die("Error ".$conn->error);
+		if(count($result) > 0){
+			$row = $result->fetch_assoc();
+			$teacher_firstName = $row['teacher_firstName'];
+			$teacher_lastName = $row['teacher_lastName'];
+			$teacher_age = $row['teacher_age'];
+			$teacher_contact = $row['teacher_contact'];
+		}
+	}
+
+	if(isset($_POST['btnUpdate_t'])){
+		$update_id_t = $_POST['update_id_t'];
+		$teacher_firstName = $_POST['teacher_firstName'];
+		$teacher_lastName = $_POST['teacher_lastName'];
+		$teacher_age = $_POST['teacher_age'];
+		$teacher_contact = $_POST['teacher_contact'];
+
+		$updateQuery = "UPDATE teacher SET teacher_firstName = '$teacher_firstName', teacher_lastName =      '$teacher_lastName', teacher_age = '$teacher_age', teacher_contact = '$teacher_contact' WHERE teacher_id = '$update_id_t'";
+		$conn->query($updateQuery) or die("Error sa update ".$conn->error);
+
+		$_SESSION['msg'] = "Update success";
+		$_SESSION['msg_type'] = "success";
+
+		header("location: teacher.php");
 
 	}
 ?>
